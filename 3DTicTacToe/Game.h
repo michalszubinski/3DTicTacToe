@@ -1,29 +1,43 @@
 #pragma once
 
 #include "Libraries.h"
+#include "Utilities.h"
 #include "Map.h"
 
 class Game
 {
 	// Fields
+	const int _lowerBound = 1;
 	const int _xDim = 3;
 	const int _yDim = 3;
+	const int _zDim = 3;
+	const int _winLength = 3;
 	std::shared_ptr<Map> _map;
+	bool _testing;
+	bool _consoleMode;
+	bool _isGameEnded;
+	int _currentPlayer = 0;
+	int _currentMove = 0;
 	
 
 	// Constructor
-	Game()
+	Game(bool testing = false, bool consoleMode = true) : _testing(testing), _consoleMode(consoleMode)
 	{
-		_map = std::make_shared<Map>(_xDim, _yDim);
+		// Todo: insert game dimensions
+		// Todo: variable win length
+		_map = std::make_shared<Map>(Map(_xDim, _yDim, _zDim));
+		_isGameEnded = false;
 	}
 
 	// Methods
 	void StartGame();
 	void PlayerTurn();
-	void PlayerDecideMove();		// In PlayerTurn
-	void ValidateMove();			// In PlayerTurn
-	void ApplyMove();				// In PlayerTurn
-	void ChangePlayer();			// In PlayerTurn
+	Position PlayerDecideMove();					// In PlayerTurn
+	bool ValidateMove(Position move);				// In PlayerTurn
+	bool ValidateMoveWithinRange(Position move) const;
+	bool ValidateMoveAlreadyExists(Position move);
+	void ApplyMove(Position move);					// In PlayerTurn
+	void ChangePlayer();							// In PlayerTurn
 	void CheckForGameEnd();
 };
 
