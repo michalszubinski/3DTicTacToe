@@ -6,6 +6,7 @@
 
 class Game
 {
+public:
 	// Fields
 	const int _lowerBound = 1;
 	const int _xDim = 3;

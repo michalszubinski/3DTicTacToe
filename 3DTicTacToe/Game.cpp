@@ -32,9 +32,7 @@ void Game::PlayerTurn()
 
 Position Game::PlayerDecideMove()
 {
-	// Todo
-	Position pos(0, 0, 0);
-	return pos;
+	return Utilities::inputCoordinatesConsole();
 }
 
 bool Game::ValidateMove(Position move)
