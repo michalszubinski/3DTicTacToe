@@ -5,7 +5,11 @@ void Game::StartGame()
 	// Todo: Validate dimensions
 	while (!this->_isGameEnded)
 	{
-		if (_consoleMode) Utilities::printConsoleBoard(_map);
+		if (_consoleMode)
+		{
+			Utilities::clearScreen();
+			Utilities::printConsoleBoard(_map);
+		}
 		PlayerTurn();
 		ChangePlayer();
 	}

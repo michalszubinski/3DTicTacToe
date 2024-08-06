@@ -11,5 +11,6 @@ public:
 
 	static void printConsoleBoard(std::shared_ptr<Map> argMap);
 	static Position inputCoordinatesConsole();
+	static void clearScreen();
 };
 
