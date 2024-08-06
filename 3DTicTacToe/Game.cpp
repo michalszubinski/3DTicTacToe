@@ -11,9 +11,9 @@ void Game::StartGame()
 			Utilities::printConsoleBoard(_map);
 		}
 		PlayerTurn();
+		CheckForGameEnd();
 		ChangePlayer();
 	}
-
 }
 
 void Game::PlayerTurn()
@@ -31,7 +31,6 @@ void Game::PlayerTurn()
 			break;
 		}
 	}
-	CheckForGameEnd();
 }
 
 Position Game::PlayerDecideMove()
@@ -63,7 +62,6 @@ void Game::ApplyMove(Position move)
 	
 	Symbol symbol(_currentPlayer, _currentMove);
 
-	// DOES NOT COMPILE
 	_map->_symbols[move] = symbol;
 }
 
@@ -75,6 +73,15 @@ void Game::ChangePlayer()
 
 void Game::CheckForGameEnd()
 {
-	// Todo
+	char symbol = (_currentPlayer == 0) ? 'X' : 'O';
+	std::vector<Position> positions = _map->GetAllOccupiedPositionsByPlayer(symbol);
+	std::vector<GameWinConditionPath> gameWinConditionPaths;
+	GameWinConditionPathSearcher winConditionPathSearcher(positions);
+
+	for (auto& position : positions)
+	{
+
+	}
+
 	return;
 }

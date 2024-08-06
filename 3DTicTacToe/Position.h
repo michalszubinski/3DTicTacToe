@@ -66,12 +66,12 @@ public:
 
     bool operator<(const Position& rhs) const noexcept
     {
-        return this->comparison < rhs.comparison; // for example
+        return this->comparison < rhs.comparison;
     }
 
     bool operator>(const Position& rhs) const noexcept
     {
-        return this->comparison > rhs.comparison; // for example
+        return this->comparison > rhs.comparison;
     }
 
     bool operator==(const Position& rhs) const noexcept

@@ -3,6 +3,10 @@
 #include "Libraries.h"
 #include "Utilities.h"
 #include "Map.h"
+#include "GameWinConditionPath.h"
+#include "GameWinConditionPathSearcher.h"
+
+enum class GameState { IN_GAME, WIN, DRAW };
 
 class Game
 {
@@ -19,6 +23,7 @@ public:
 	bool _isGameEnded;
 	int _currentPlayer = 0;
 	int _currentMove = 0;
+	int _gameWinner = 0;
 	
 
 	// Constructor

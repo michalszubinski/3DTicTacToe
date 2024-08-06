@@ -22,4 +22,5 @@ public:
 	std::vector<Position> GetAllOccupiedPositions();		// Returns all occupied positions
 	bool ValidatePosition();								// Checks whether position within bounds
 	bool CheckIfPositionExists(Position pos);
+	std::vector<Position> GetAllOccupiedPositionsByPlayer(char playerSymbol);
 };

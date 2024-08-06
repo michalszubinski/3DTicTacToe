@@ -129,6 +129,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameWinConditionPath.h" />
+    <ClInclude Include="GameWinConditionPathSearcher.h" />
     <ClInclude Include="Libraries.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Position.h" />
@@ -137,6 +139,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameWinConditionPath.cpp" />
+    <ClCompile Include="GameWinConditionPathSearcher.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Position.cpp" />
