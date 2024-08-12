@@ -7,7 +7,6 @@ class GameWinConditionPathSearcher
 {
 public:
 	// Fields
-	Position _startingPosition;
 	std::vector<Position> _allPositions;
 	std::set<GameWinConditionPath> _allPaths;
 	int _maxId = 0;
@@ -18,5 +17,6 @@ public:
 	// Methods
 	void GeneratePaths(Position position);
 	int GetMaxId();
+	std::vector<PointData> GetNearbyPositions(Position centralPosition ,std::vector<Position> positions);
 };
 

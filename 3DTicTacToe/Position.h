@@ -62,6 +62,38 @@ public:
         this->updateComparison();
     }
 
+    // Utility methods
+
+    int DiffX(int argX)
+    {
+        return this->x - argX;
+    }
+
+    int DiffY(int argY)
+    {
+        return this->y - argY;
+    }
+
+    int DiffZ(int argZ)
+    {
+        return this->z - argZ;
+    }
+
+    int DiffX(Position pos)
+    {
+        return this->x - pos.GetX();
+    }
+
+    int DiffY(Position pos)
+    {
+        return this->y - pos.GetY();
+    }
+
+    int DiffZ(Position pos)
+    {
+        return this->z - pos.GetZ();
+    }
+
     // Operators overload
 
     bool operator<(const Position& rhs) const noexcept
@@ -77,6 +109,11 @@ public:
     bool operator==(const Position& rhs) const noexcept
     {
         return this->comparison == rhs.comparison; 
+    }
+
+    bool operator!=(const Position& rhs) const noexcept
+    {
+        return this->comparison != rhs.comparison;
     }
 };
 

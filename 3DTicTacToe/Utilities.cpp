@@ -1,6 +1,6 @@
 #include "Utilities.h"
 
-void Utilities::printConsoleBoard(std::shared_ptr<Map> argMap)
+void Utilities::PrintConsoleBoard(std::shared_ptr<Map> argMap)
 { 
     char tmpChar = ' ';
     for (int k = 1; k <= argMap->_zDimensions; ++k)
@@ -24,7 +24,7 @@ void Utilities::printConsoleBoard(std::shared_ptr<Map> argMap)
     }
 }
 
-Position Utilities::inputCoordinatesConsole()
+Position Utilities::InputCoordinatesConsole()
 {
     std::string input;
     std::cout << "Enter the coordinates (x y z): ";
@@ -45,7 +45,7 @@ Position Utilities::inputCoordinatesConsole()
     }
 }
 
-void Utilities::clearScreen()
+void Utilities::ClearScreen()
 {
 #if defined _WIN32
     system("cls");

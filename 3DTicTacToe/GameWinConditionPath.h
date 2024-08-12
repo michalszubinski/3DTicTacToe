@@ -1,12 +1,22 @@
 #pragma once
 
 #include "Game.h"
+#include "Vector3d.h"
+
+struct PointData
+{
+    PointData() = default;
+    PointData(Position pos, Vector3d vector) : pos(pos), vector(vector) {}
+
+    Position pos;
+    Vector3d vector;
+};
 
 class GameWinConditionPath
 {
 public:
 	// Paths
-	std::set<Position> _positions;
+	std::vector<PointData> _positions;
 	int _pathId;
 
 	// Constructor
@@ -14,7 +24,7 @@ public:
 	GameWinConditionPath(int id) : _pathId(id) {};
 
 	// Methods
-	bool checkIfPathWins(int xDim, int yDim, int zDim, int lowerBound, int winLength);
+	bool CheckIfPathWins(int xDim, int yDim, int zDim, int lowerBound, int winLength);
 
 	// Operator overloads
     bool operator<(const GameWinConditionPath& rhs) const noexcept

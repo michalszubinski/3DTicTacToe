@@ -9,8 +9,8 @@ class Utilities
 {
 public: 
 
-	static void printConsoleBoard(std::shared_ptr<Map> argMap);
-	static Position inputCoordinatesConsole();
-	static void clearScreen();
+	static void PrintConsoleBoard(std::shared_ptr<Map> argMap);
+	static Position InputCoordinatesConsole();
+	static void ClearScreen();
 };
 

@@ -7,8 +7,8 @@ void Game::StartGame()
 	{
 		if (_consoleMode)
 		{
-			Utilities::clearScreen();
-			Utilities::printConsoleBoard(_map);
+			Utilities::ClearScreen();
+			Utilities::PrintConsoleBoard(_map);
 		}
 		PlayerTurn();
 		CheckForGameEnd();
@@ -35,7 +35,7 @@ void Game::PlayerTurn()
 
 Position Game::PlayerDecideMove()
 {
-	return Utilities::inputCoordinatesConsole();
+	return Utilities::InputCoordinatesConsole();
 }
 
 bool Game::ValidateMove(Position move)
