@@ -12,4 +12,7 @@
 #include <string>
 #include <set>
 #include <filesystem>
+// Windows specific
+#if defined _WIN32
 #include <conio.h>
+#endif
