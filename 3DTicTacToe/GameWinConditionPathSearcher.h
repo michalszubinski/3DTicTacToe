@@ -18,5 +18,7 @@ public:
 	void GeneratePaths(Position position);
 	int GetMaxId();
 	std::vector<PointData> GetNearbyPositions(Position centralPosition ,std::vector<Position> positions);
+	std::vector<PointData> GetNearbyPositions(Position centralPosition ,std::vector<Position> positions), std::vector<Position> notAllowedPositions;
+	bool IsPossitionInVector(Position argPosition, std::vector<Position> positions);
 };
 
