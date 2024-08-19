@@ -35,6 +35,7 @@ public:
 		_isGameEnded = false;
 	}
 
+public:
 	// Methods
 	void StartGame();
 	void PlayerTurn();
