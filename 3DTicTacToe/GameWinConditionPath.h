@@ -24,6 +24,7 @@ public:
 	GameWinConditionPath(int id) : _pathId(id) {};
 	GameWinConditionPath(int id, std::vector<PointData> positions) : _pathId(id), _positions(positions) {};
 
+public:
 	// Methods
 	bool CheckIfPathWins(int xDim, int yDim, int zDim, int lowerBound, int winLength);
 

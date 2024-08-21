@@ -78,10 +78,32 @@ void Game::CheckForGameEnd()
 	std::vector<GameWinConditionPath> gameWinConditionPaths;
 	GameWinConditionPathSearcher winConditionPathSearcher(positions);
 
-	for (auto& position : positions)
-	{
+	// Checking for a draw
+	if (_map->CountAllSymbols() == _volume)
+		GameEndedDraw();
 
-	}
+	// Checking for a win
+	for (auto& position : positions)
+		winConditionPathSearcher.GeneratePaths(position);
+	
+	for (auto path : winConditionPathSearcher._allPaths)
+		if (path.CheckIfPathWins(_xDim, _yDim, _zDim, _lowerBound, _winLength) == true)
+			GameEndedWin(_currentPlayer);
 
 	return;
+}
+
+void Game::GameEndedWin(int currentPlayer)
+{
+	_gameWinner = currentPlayer;
+	_isGameEnded = true;
+	std::cout << "Game ended; Winner: " << currentPlayer << std::endl;
+	// Todo: set the enum
+}
+
+void Game::GameEndedDraw()
+{
+	_isGameEnded = true;
+	std::cout << "Game ended - draw" << std::endl;
+	// Todo: set the enum
 }

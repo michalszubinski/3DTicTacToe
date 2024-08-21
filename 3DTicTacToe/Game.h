@@ -16,6 +16,7 @@ public:
 	const int _xDim = 3;
 	const int _yDim = 3;
 	const int _zDim = 3;
+	const int _volume = _xDim * _yDim * _zDim;
 	const int _winLength = 3;
 	std::shared_ptr<Map> _map;
 	bool _testing;
@@ -46,5 +47,7 @@ public:
 	void ApplyMove(Position move);					// In PlayerTurn
 	void ChangePlayer();							// In PlayerTurn
 	void CheckForGameEnd();
+	void GameEndedWin(int currentPlayer);
+	void GameEndedDraw();
 };
 

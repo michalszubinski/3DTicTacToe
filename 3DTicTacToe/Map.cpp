@@ -16,3 +16,8 @@ std::vector<Position> Map::GetAllOccupiedPositionsByPlayer(char playerSymbol)
 
 	return positions;
 }
+
+int Map::CountAllSymbols()
+{
+	return _symbols.size();
+}
